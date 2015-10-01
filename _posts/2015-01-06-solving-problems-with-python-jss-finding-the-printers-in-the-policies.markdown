@@ -104,7 +104,9 @@ parameterize this and re-use it later... Which I'll do next. Also, let's trim
 it up into a list comprehension.
     
 {% highlight python %}    
-            results = [(policy.id, policy.name) for policy in all_policies for printer in policy.findall('printers/printer') if printer.findtext('name') == search_name]
+            results = [(policy.id, policy.name) for policy in all_policies
+					   for printer in policy.findall('printers/printer')
+					   if printer.findtext('name') == search_name]
 {% endhighlight %}
     
 (There's no way this will fit on a single line in this theme... Sorry!) This
@@ -129,7 +131,9 @@ Here is the entire finished script:
         all_policies = j.Policy().retrieve_all()
         for search_name in sys.argv[1:]:
             print "Searching for %s" % search_name
-            results = [(policy.id, policy.name) for policy in all_policies for printer in policy.findall('printers/printer') if printer.findtext('name') == search_name]
+            results = [(policy.id, policy.name) for policy in all_policies
+			           for printer in policy.findall('printers/printer')
+					   if printer.findtext('name') == search_name]
             for result in results:
                 print('Found in %s: %s' % result)
 {% endhighlight %}
