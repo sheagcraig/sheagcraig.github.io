@@ -31,7 +31,9 @@ _Then_ I filtered the list down just to the two older-model iMacs which were in 
 
     
     
+{% highlight python %}    
     old_ms503 = [computer for computer in ms503 if computer.findtext("hardware/model").rsplit("(")[1].rstrip(")") in ("Early 2009", "Mid 2007")]
+{% endhighlight %}
     
 
 
@@ -42,8 +44,10 @@ From there, it's a simple:
 
     
     
+{% highlight python %}    
     for computer in old_ms503:
     	computer.delete()
+{% endhighlight %}
     
 
 
