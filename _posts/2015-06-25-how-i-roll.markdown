@@ -16,10 +16,11 @@ Today I had to remove some computers from our Casper JSS that we sold. Yes, I co
 
 First I grabbed all of the computers from the lab we sold:
 
-    
+{% highlight python %}    
     
     ms503 = [j.Computer(computer.id) for computer in j.Computer() if computer.name.upper().startswith("MS503")]
     
+{% endhighlight %}
 
 
 Rather than pull the full record for each computer on the JSS, which is costly (time-intensive), I did this preliminary list first. So, it grabbed all computers whose name starts with "MS503", regardless of case.
