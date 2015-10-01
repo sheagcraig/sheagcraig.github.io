@@ -1,0 +1,54 @@
+---
+author: scraig
+comments: true
+date: 2015-06-25 13:22:53+00:00
+layout: post
+slug: how-i-roll
+title: How I Roll
+wordpress_id: 208
+---
+I use a mouse or trackpad all day. Don't get me wrong, I don't hate those
+devices.
+
+But I don't like repetitive click-click-click workflows, of any kind.
+Especially in a webpage that has to refresh. Too error prone, too mind-numbing!
+
+Today I had to remove some computers from our Casper JSS that we sold. Yes, I
+could just click each one and  hit delete. Or yes, I could make the appropriate
+search and then perform an "Action/Delete Comptuers". But I didn't write
+python-jss to click around in a web form!
+
+First I grabbed all of the computers from the lab we sold:
+
+{% highlight python %}    
+    
+    ms503 = [j.Computer(computer.id) for computer in j.Computer() if computer.name.upper().startswith("MS503")]
+    
+{% endhighlight %}
+
+Rather than pull the full record for each computer on the JSS, which is costly
+(time-intensive), I did this preliminary list first. So, it grabbed all
+computers whose name starts with "MS503", regardless of case.
+
+We already have new computers in place with duplicate names; thus, the
+comprehension uses name for the name matching, but pulls the full record using
+the id property. Otherwise, the JSS returns the first result with that name,
+even though there may be more than one.
+
+_Then_ I filtered the list down just to the two older-model iMacs which were in
+the first list:
+    
+{% highlight python %}    
+    old_ms503 = [computer for computer in ms503 if computer.findtext("hardware/model").rsplit("(")[1].rstrip(")") in ("Early 2009", "Mid 2007")]
+{% endhighlight %}
+
+This is admittedly an ugly chain of rsplit/rstrip to get the model name. If it weren't just for expediency I would probably write a regex to do the job.
+
+From there, it's a simple:
+
+{% highlight python %}    
+    for computer in old_ms503:
+    	computer.delete()
+{% endhighlight %}
+
+So fresh and so clean!
