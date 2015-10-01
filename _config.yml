@@ -10,3 +10,5 @@ github_username:  sheagcraig
 
 # Build settings
 markdown: kramdown
+
+highlighter: pygments
