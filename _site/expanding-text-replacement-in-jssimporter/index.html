@@ -1,0 +1,296 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Expanding Text Replacement in JSSImporter &#8211; Taco Destroyer</title>
+<meta name="description" content="After some PR’s and ideas tossed around with other admins using JSSImporter, it became pretty clear that there are a lot of creative uses of JSSImporter that the original code doesn’t make very easy, or possible, without some hacking.
+
+">
+<meta name="keywords" content="">
+
+  
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Expanding Text Replacement in JSSImporter">
+<meta name="twitter:description" content="After some PR’s and ideas tossed around with other admins using JSSImporter, it became pretty clear that there are a lot of creative uses of JSSImporter that the original code doesn’t make very easy, or possible, without some hacking.
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Expanding Text Replacement in JSSImporter">
+<meta property="og:description" content="After some PR’s and ideas tossed around with other admins using JSSImporter, it became pretty clear that there are a lot of creative uses of JSSImporter that the original code doesn’t make very easy, or possible, without some hacking.
+
+">
+<meta property="og:url" content="http://localhost:4000/expanding-text-replacement-in-jssimporter/">
+<meta property="og:site_name" content="Taco Destroyer">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/expanding-text-replacement-in-jssimporter/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Taco Destroyer Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		        
+		    
+		    <li><a href="http://localhost:4000/about/" >About</a></li>
+		  
+		    
+		        
+		    
+		    <li><a href="http://localhost:4000/articles/" >Articles</a></li>
+		  
+		    
+		        
+		    
+		    <li><a href="http://localhost:4000/blog/" >Blog</a></li>
+		  
+		    
+		        
+		    
+		    <li><a href="http://localhost:4000/theme-setup/" >Theme Setup</a></li>
+		  
+		    
+		        
+		        
+		    <li><a href="http://mademistakes.com" target="_blank">Made Mistakes</a></li>
+		  
+		    
+		        
+		    
+		    <li><a href="http://localhost:4000/search/" >Search</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<header class="masthead">
+	<div class="wrap">
+      
+  		<a href="http://localhost:4000/" class="site-logo" rel="home" title="Taco Destroyer"><img src="http://localhost:4000/images/site-logo.png" width="200" height="200" alt="Taco Destroyer logo" class="animated fadeInDown"></a>
+      
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Taco Destroyer</a></h1>
+		<h2 class="site-description animated fadeIn" itemprop="description">Describe your website here.</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"></span>
+        
+          <h1 class="entry-title">Expanding Text Replacement in JSSImporter</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+          
+        
+        <span class="author vcard">By <span class="fn"></span></span>
+        <span class="entry-date date published"><time datetime="2015-04-01T14:54:02-04:00"><i class="fa fa-calendar-o"></i> April 01, 2015</time></span>
+        
+        
+        
+        
+      </footer>
+      <div class="entry-content">
+        <p>After some PR’s and ideas tossed around with other admins using JSSImporter, it became pretty clear that there are a lot of creative uses of JSSImporter that the original code doesn’t make very easy, or possible, without some hacking.</p>
+
+<p>One big change that comes with JSSImporter 0.3.8 is that it allows you to use any string-type AutoPkg environment variable in your template text substitutions.</p>
+
+<p>To use a variable for text substitution, just wrap it in %’s in the template file. For example, if I wanted to include the value of AUTOPKG_VERSION as part of a description in my policy template, I could do this (only the relevant parts of the XML are included for brevity!)</p>
+
+<pre><code>&lt;description&gt;Built with AutoPkg version %AUTOPKG_VERSION% for your pleasure!&lt;/description&gt;
+</code></pre>
+
+<p>One thing that many people don’t realize is that AutoPkg doesn’t freak out if you add arguments or input variables to your recipe that don’t “exist”. You can use this to fill arguments to the JSSImporter as well as templates; you don’t necessarily need an argument for every conceivable setting. For example, say I want to have a second smart group scoped in my policy, but I want the name to be overrideable with input variables.</p>
+
+<p>First I would add a new input variable named something appropriately:</p>
+
+<pre><code>&lt;key&gt;Input&lt;/key&gt;
+&lt;dict&gt;
+	&lt;key&gt;SecondGroupName&lt;/key&gt;
+	&lt;string&gt;SuperTesters&lt;/string&gt;
+...
+</code></pre>
+
+<p>Then, later, in the JSSImporter arguments, in the groups array, I could have my second group use it:</p>
+
+<pre><code>                &lt;key&gt;groups&lt;/key&gt;
+                &lt;array&gt;
+                    &lt;dict&gt;
+                        &lt;key&gt;name&lt;/key&gt;
+                        &lt;string&gt;%GROUP_NAME%&lt;/string&gt;
+                        &lt;key&gt;smart&lt;/key&gt;
+                        &lt;true&gt;&lt;/true&gt;
+                        &lt;key&gt;template_path&lt;/key&gt;
+                        &lt;string&gt;%GROUP_TEMPLATE%&lt;/string&gt;
+                    &lt;/dict&gt;
+                    &lt;dict&gt;
+                        &lt;key&gt;name&lt;/key&gt;
+                        &lt;string&gt;%SecondGroupName%&lt;/string&gt;
+                        &lt;key&gt;smart&lt;/key&gt;
+                        &lt;true&gt;&lt;/true&gt;
+                        &lt;key&gt;template_path&lt;/key&gt;
+                        &lt;string&gt;%GROUP_TEMPLATE2%&lt;/string&gt;
+                    &lt;/dict&gt;
+                &lt;/array&gt;
+</code></pre>
+
+<p><em>and</em> I can include that somewhere in a template as well. So my policy template could include this:</p>
+
+<pre><code>&lt;policy&gt;
+    &lt;general&gt;
+        &lt;name&gt;Install Latest %PROD_NAME%&lt;/name&gt;
+        &lt;enabled&gt;true&lt;/enabled&gt;
+        &lt;frequency&gt;Ongoing&lt;/frequency&gt;
+        &lt;category&gt;
+            &lt;name&gt;%POLICY_CATEGORY%&lt;/name&gt;
+        &lt;/category&gt;
+    &lt;/general&gt;
+    &lt;scope&gt; 
+        
+    &lt;/scope&gt;
+    &lt;package_configuration&gt;
+        
+    &lt;/package_configuration&gt;
+    &lt;scripts&gt;
+        
+    &lt;/scripts&gt;
+    &lt;self_service&gt;
+        &lt;use_for_self_service&gt;true&lt;/use_for_self_service&gt;
+        &lt;install_button_text&gt;Install %VERSION%&lt;/install_button_text&gt;
+        &lt;self_service_description&gt;%SELF_SERVICE_DESCRIPTION%&lt;/self_service_description&gt;
+    &lt;/self_service&gt;
+    &lt;maintenance&gt;
+        &lt;recon&gt;true&lt;/recon&gt;
+    &lt;/maintenance&gt;
+    &lt;user_interaction&gt;
+        &lt;message_start&gt;Greetings %SecondGroupName%&lt;/message_start&gt;
+        &lt;allow_users_to_defer&gt;false&lt;/allow_users_to_defer&gt;
+        &lt;allow_deferral_until_utc&gt;&lt;/allow_deferral_until_utc&gt;
+        &lt;message_finish&gt;&lt;/message_finish&gt;
+    &lt;/user_interaction&gt;
+&lt;/policy&gt;
+</code></pre>
+
+<p>Granted, that’s kind of a contrived use, but it points to a way to manage a lot of settings with a pretty flexible ability to later override things.</p>
+
+<p>Which reminds me: Try to set all of the arguments to JSSImporter in your recipes with input variables. This makes it a lot easier for other people to then borrow your recipe and make it work in their environment. Indeed, once we get it off the ground, this will be a style requirement for the “official” JSS recipes repo… Stay tuned.</p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/shout-out/" class="btn" title="Shout out!">Previous</a>
+      
+      
+        <a href="http://localhost:4000/how-i-roll/" class="btn" title="How I Roll">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2015 Your Name. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/" rel="nofollow">So Simple Theme</a>.</span>
+<div class="social-icons">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  
+	
+  <a href="http://localhost:4000/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>
