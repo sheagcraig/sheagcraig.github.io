@@ -205,10 +205,10 @@ scoped to them to pop the notification on screen.
 They can then click on the clean button, authenticate Self Service, and run the
 Clean Adware policy to clean and reboot their computer.
 
-![Self_Service_and_How_We_Are_Removing_Adware___Shea_Craig]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Self_Service_and_How_We_Are_Removing_Adware___Shea_Craig.png)
+![Screenshot]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Self_Service_and_How_We_Are_Removing_Adware___Shea_Craig.png)
 
 This is all well and good... But to take it to the next level, maybe I'll write
 a JSS recipe so that you can AutoPkg/JSSImporter this entire procedure to your
 JSS with no other work than running the recipe.
 
-![tumblr_n0dspuc1Yx1trues8o1_500]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/tumblr_n0dspuc1Yx1trues8o1_500.gif)
+![Screenies.]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/tumblr_n0dspuc1Yx1trues8o1_500.gif)
