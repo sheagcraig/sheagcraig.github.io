@@ -5,7 +5,7 @@ tags: [about, Jekyll, theme, responsive]
 modified: 2014-08-08T20:53:07.573882-04:00
 comments: false
 image:
-  feature: leatherface-banner.png
+  feature: leatherface-banner.jpg
 ---
 
 I am an IT Systems Engineer for SAS, managing their Mac systems.
