@@ -30,7 +30,7 @@ owner:
   avatar: leatherface.png
   bio: "Describe your self."
   email:
-  # disqus-shortname:
+  disqus-shortname:
   twitter: shea_craig
   facebook: #username
   google:
