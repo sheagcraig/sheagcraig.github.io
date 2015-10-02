@@ -225,4 +225,4 @@ recipe.
 If you're really really into Python, here's a fresh python-print blazer from
 Roberto Cavelli:
 
-[![pythonBlazer]({{site.url}}//images/2014-12-10-getting-started-with-jssimporter-for-autopkg-pt-1/pythonBlazer.jpg)
+![pythonBlazer]({{site.url}}//images/2014-12-10-getting-started-with-jssimporter-for-autopkg-pt-1/pythonBlazer.jpg)
