@@ -32,7 +32,7 @@ So I started expanding AdwareCheck into something even better. Check out
 
 I blogged about the first one of these adware packages that we've had to deal
 with:
-[here]({% post_url 2015-01-21-cleaning-up-stupid-mac-malware-projectx %}.
+[here]({% post_url 2015-01-21-cleaning-up-stupid-mac-malware-projectx %}).
 Researching that, while fun, was also time consuming. Fortunately, Apple just
 released [an article](https://support.apple.com/en-us/ht203987) detailing files
 to look for and procedures to use to remove common adware programs.
@@ -59,17 +59,22 @@ to any other management system.
 
 First, I added the AdwareCheckExtensionAttribute.py script to our JSS via the
 Management Settings/Computer Management/Extension Attributes menu:
+
 ![Extension_Attributes]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Extension_Attributes.png)
+
 ![Edit_Extension_Attribute_AdwarePresent]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Edit_Extension_Attribute_AdwarePresent.png)
+
 Check the above screenshot for the correct extension attribute settings!
 
 Next, I created a smart group to collect computers which had been identified as
 _infected by dirty adware_:
+
 ![Screen Shot 2015-03-25 at 11.31.28 AM]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Screen-Shot-2015-03-25-at-11.31.28-AM.png)
 
 Notice, the criteria is that the value of AdwarePresent is _like_ True. This is
 because the extension attribute also reports back which specific files were
 found, so it will never report back _exactly_ True.
+
 ![ST-Loaner06]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/ST-Loaner06.png)
 
 This is a nice added feature for IT; we like to be able to see what exactly the
@@ -108,7 +113,9 @@ available for your policy.
 The next step was to create a Self Service policy named "Remove Adware". Please
 take a close look at the screenshots for the exact settings, and I'll detail
 the important bits below.
+
 ![Edit_Policy_Remove_Adware]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Edit_Policy_Remove_Adware.png)
+
 Create a new policy, naming it something appropriate (Remove Adware?). Make
 sure that it doesn't trigger off of any of the general page triggers, since it
 will be a self-service policy.
@@ -117,15 +124,18 @@ The frequency should be "Ongoing" because you want the policy to be available
 as long as the user's computer tests True for Adware.
 
 ![Edit_Policy_Remove_Adware 2]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Edit_Policy_Remove_Adware-2.png)
+
 In the "Scripts" section, select the AdwareCheckExtensionAttribute.py script
 and set the "Parameter 4" value to " --remove". This is how the script knows
 its in removal mode vs. extension attribute mode.
 
 ![Edit_Policy_Remove_Adware 4]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Edit_Policy_Remove_Adware-4.png)
+
 Next, add a Maintenance/Update Inventory task to the policy so that the
 computer has a chance to drop out of the smart group.
 
 ![Edit_Policy_Remove_Adware 3]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Edit_Policy_Remove_Adware-3.png)
+
 Finally, set the Maintenance/User Logged In Action to "Restart Immediately".
 Since some of the adware has multiple launchd jobs running, and it's
 complicated to remove them in the "correct" order, it's much easier to just
@@ -133,9 +143,11 @@ force a restart on the user. (This will be addressed to the user in the Self
 Service section to come...)
 
 ![Edit_Policy_Remove_Adware 5]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Edit_Policy_Remove_Adware-5.png)
+
 Scope the policy to the smart group you created above.
 
 ![Edit_Policy_Remove_Adware 6]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Edit_Policy_Remove_Adware-6.png)
+
 Finally, in the Self Service tab, select "Make the policy available in Self
 Service" toggle. I also set the button name and icon to be more helpful.
 
@@ -156,12 +168,16 @@ step is to notify the users that they have adware, hopefully directing them
 towards Self Service.
 
 Create one final policy, titled "Notify Users of Adware" or something similar.
+
 ![Edit_Policy_Notify_user_of_Adware]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Edit_Policy_Notify_user_of_Adware1.png)
+
 Here, I selected the Recurring Check-In trigger. The notification won't fire
 off if the user is not logged in (which I could handle better in yo...), and
 it also won't work if we use the Login trigger, since it occurs before the UI
 is fully set up. Trust me-recurring check-in is fine!
+
 ![Edit_Policy_Notify_user_of_Adware]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Edit_Policy_Notify_user_of_Adware.png)
+
 Next, set up a Maintenance/Execute Command task with the following call to yo:
 {% highlight bash %}
     open /Applications/Utilities/yo.app --args -t 'Adware detected' -b 'Clean' -n 'Please remove with Self Service: Remove Adware.' -a '/Applications/Self Service.app';logger 'Sending adware notification.'
@@ -175,18 +191,24 @@ when someone clicks on the notification's "action" button (titled "Clean" in
 this example), Self Service should be opened. The extra logger command at the
 end has the dual purpose of logging to the system log and ensuring that our
 policy exits 0, rather than failing due to a mysterious error.
+
 ![Screen Shot 2015-04-01 at 2.11.46 PM]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Screen-Shot-2015-04-01-at-2.11.46-PM.png)
+
 And lastly, scope the policy to our adware smart group.
 
 Once you hit save, computers who have been added to the smart group after their
 last recon determined that they had an adware infection will have a policy
 scoped to them to pop the notification on screen.
+
 ![Screen Shot 2015-04-01 at 2.06.12 PM]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Screen-Shot-2015-04-01-at-2.06.12-PM.png)
+
 They can then click on the clean button, authenticate Self Service, and run the
 Clean Adware policy to clean and reboot their computer.
+
 ![Self_Service_and_How_We_Are_Removing_Adware___Shea_Craig]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Self_Service_and_How_We_Are_Removing_Adware___Shea_Craig.png)
 
 This is all well and good... But to take it to the next level, maybe I'll write
 a JSS recipe so that you can AutoPkg/JSSImporter this entire procedure to your
 JSS with no other work than running the recipe.
+
 ![tumblr_n0dspuc1Yx1trues8o1_500]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/tumblr_n0dspuc1Yx1trues8o1_500.gif)
