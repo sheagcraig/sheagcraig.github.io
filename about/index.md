@@ -25,8 +25,6 @@ I have written some useful things.
 - SavingThrow (Look for and remove adware, based on community-curated definitions)
 - auto_logout (A more vigorous automatic logout feature for OS X labs)
 
-Also, I have some contributions to AutoPkg, and I'm working on RecipeRobot with the amazing @homebysix.
-
 ## Some Things I Like
 - Tacos
 - Coffee
