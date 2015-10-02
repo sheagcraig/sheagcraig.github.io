@@ -1,5 +1,5 @@
 ---
-author: scraig
+author: shea_craig
 comments: true
 date: 2015-01-06 20:47:33+00:00
 layout: post
