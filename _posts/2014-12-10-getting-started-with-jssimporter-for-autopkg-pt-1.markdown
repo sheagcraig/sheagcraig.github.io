@@ -204,7 +204,7 @@ per Computer" frequency. The goal is to be as hands-off as possible).
 Finally, the JSSImporter makes sure that an icon file is available for the Self
 Service policy to display.
 
-[![Screen Shot 2014-12-10 at 2.07.15 PM](http://labs.da.org/wordpress/sheagcraig/files/2014/12/Screen-Shot-2014-12-10-at-2.07.15-PM.png)](http://labs.da.org/wordpress/sheagcraig/files/2014/12/Screen-Shot-2014-12-10-at-2.07.15-PM.png)
+![Screen Shot 2014-12-10 at 2.07.15 PM]({{site.url}}/images/2014-12-10/getting-started-with-jssimporter-for-autopkg-pt-1/Screen-Shot-2014-12-10-at-2.07.15-PM.png)
 
 A user with a computer in the "Testing" group can thus open up Self-Service,
 authenticate, and pop the "install" button on the Testing->"Install Latest
@@ -225,4 +225,4 @@ recipe.
 If you're really really into Python, here's a fresh python-print blazer from
 Roberto Cavelli:
 
-[![pythonBlazer](http://labs.da.org/wordpress/sheagcraig/files/2014/12/pythonBlazer.jpg)](http://labs.da.org/wordpress/sheagcraig/files/2014/12/pythonBlazer.jpg)
+[![pythonBlazer]({{site.url}}//images/2014-12-10/getting-started-with-jssimporter-for-autopkg-pt-1/pythonBlazer.jpg)
