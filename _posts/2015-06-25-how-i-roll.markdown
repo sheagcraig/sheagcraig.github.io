@@ -1,5 +1,5 @@
 ---
-author: "Shea Craig"
+author: shea_craig
 comments: true
 date: 2015-06-25 13:22:53+00:00
 layout: post
