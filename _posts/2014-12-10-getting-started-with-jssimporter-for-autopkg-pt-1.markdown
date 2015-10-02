@@ -20,7 +20,7 @@ But times change, and our school switched to using the Casper Suite to manage
 our fleet, and dropped Munki. Suddenly I had to start manually moving packages
 around and clicky-clicky-creating a ton of policies. This made me sad.
 
-![tears]({{site.url}}/images/2014-12-10/getting-started-with-jssimporter-for-autopkg-pt-1/tears-300x220.jpg)
+![tears]({{site.url}}/images/2014-12-10-getting-started-with-jssimporter-for-autopkg-pt-1/tears-300x220.jpg)
 
 Google Image search "sad" some time. You won't be disappointed.
 
@@ -204,7 +204,7 @@ per Computer" frequency. The goal is to be as hands-off as possible).
 Finally, the JSSImporter makes sure that an icon file is available for the Self
 Service policy to display.
 
-![Screen Shot 2014-12-10 at 2.07.15 PM]({{site.url}}/images/2014-12-10/getting-started-with-jssimporter-for-autopkg-pt-1/Screen-Shot-2014-12-10-at-2.07.15-PM.png)
+![Screen Shot 2014-12-10 at 2.07.15 PM]({{site.url}}/images/2014-12-10-getting-started-with-jssimporter-for-autopkg-pt-1/Screen-Shot-2014-12-10-at-2.07.15-PM.png)
 
 A user with a computer in the "Testing" group can thus open up Self-Service,
 authenticate, and pop the "install" button on the Testing->"Install Latest
@@ -225,4 +225,4 @@ recipe.
 If you're really really into Python, here's a fresh python-print blazer from
 Roberto Cavelli:
 
-[![pythonBlazer]({{site.url}}//images/2014-12-10/getting-started-with-jssimporter-for-autopkg-pt-1/pythonBlazer.jpg)
+[![pythonBlazer]({{site.url}}//images/2014-12-10-getting-started-with-jssimporter-for-autopkg-pt-1/pythonBlazer.jpg)
