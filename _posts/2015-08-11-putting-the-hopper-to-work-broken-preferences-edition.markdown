@@ -6,6 +6,8 @@ layout: post
 slug: putting-the-hopper-to-work-broken-preferences-edition
 title: 'Putting the Hopper to Work: Broken Preferences Edition'
 wordpress_id: 223
+image:
+  feature: 2015-08-11-putting-the-hopper-to-work-broken-preferences-edition/ecf1b5c2b2d2930afe3e7285ceb0825c.jpg
 ---
 
 ![ecf1b5c2b2d2930afe3e7285ceb0825c]({{ site.url }}/images/2015-08-11-putting-the-hopper-to-work-broken-preferences-edition/ecf1b5c2b2d2930afe3e7285ceb0825c.jpg)
