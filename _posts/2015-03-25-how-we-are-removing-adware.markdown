@@ -125,14 +125,14 @@ its in removal mode vs. extension attribute mode.
 Next, add a Maintenance/Update Inventory task to the policy so that the
 computer has a chance to drop out of the smart group.
 
-![Edit_Policy_Remove_Adware 3](/Edit_Policy_Remove_Adware-3.png)
+![Edit_Policy_Remove_Adware 3]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Edit_Policy_Remove_Adware-3.png)
 Finally, set the Maintenance/User Logged In Action to "Restart Immediately".
 Since some of the adware has multiple launchd jobs running, and it's
 complicated to remove them in the "correct" order, it's much easier to just
 force a restart on the user. (This will be addressed to the user in the Self
 Service section to come...)
 
-![Edit_Policy_Remove_Adware 5](/Edit_Policy_Remove_Adware-5.png)
+![Edit_Policy_Remove_Adware 5]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Edit_Policy_Remove_Adware-5.png)
 Scope the policy to the smart group you created above.
 
 ![Edit_Policy_Remove_Adware 6]({{ site.url }}/images/2015-03-25-how-we-are-removing-adware/Edit_Policy_Remove_Adware-6.png)
