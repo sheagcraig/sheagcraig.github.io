@@ -20,7 +20,7 @@ But times change, and our school switched to using the Casper Suite to manage
 our fleet, and dropped Munki. Suddenly I had to start manually moving packages
 around and clicky-clicky-creating a ton of policies. This made me sad.
 
-[![tears](http://labs.da.org/wordpress/sheagcraig/files/2014/12/tears-300x220.jpg)](http://labs.da.org/wordpress/sheagcraig/files/2014/12/tears.jpg)
+![tears]({{site.url}}/images/2014-12-10/getting-started-with-jssimporter-for-autopkg-pt-1/tears-300x220.jpg)
 
 Google Image search "sad" some time. You won't be disappointed.
 
