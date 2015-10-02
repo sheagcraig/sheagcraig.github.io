@@ -5,12 +5,13 @@ tags: [about, Jekyll, theme, responsive]
 modified: 2014-08-08T20:53:07.573882-04:00
 comments: false
 image:
-  feature: leatherface.png
+  feature: leatherface-banner.png
 ---
 
 I am an IT Systems Engineer for SAS, managing their Mac systems.
 
-I have written some useful things:
+I have written some useful things.
+
 ## Casper Stuff
 - python-jss (Casper REST API wrapper for python)
 - JSSImporter (The magic plugin that lets you use AutoPkg with Casper)
