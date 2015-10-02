@@ -1,0 +1,280 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Zipping Non-Flat Packages For Casper &#8211; Taco Destroyer</title>
+<meta name="description" content="Just a short little technical note. python-jss just added support for the Jamf
+distribution server as a distribution point type, which hopefully will make
+both python-jss and JSSImporter (I’m going to start calling it that instead of
+jss-autopkg-addon) useful for more people. And just to let people know the
+direction for the future, I’m hoping to add CDP support very soon.
+
+">
+<meta name="keywords" content="">
+
+  
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Zipping Non-Flat Packages For Casper">
+<meta name="twitter:description" content="Just a short little technical note. python-jss just added support for the Jamf
+distribution server as a distribution point type, which hopefully will make
+both python-jss and JSSImporter (I’m going to start calling it that instead of
+jss-autopkg-addon) useful for more people. And just to let people know the
+direction for the future, I’m hoping to add CDP support very soon.
+
+">
+<meta name="twitter:site" content="@shea_craig">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zipping Non-Flat Packages For Casper">
+<meta property="og:description" content="Just a short little technical note. python-jss just added support for the Jamf
+distribution server as a distribution point type, which hopefully will make
+both python-jss and JSSImporter (I’m going to start calling it that instead of
+jss-autopkg-addon) useful for more people. And just to let people know the
+direction for the future, I’m hoping to add CDP support very soon.
+
+">
+<meta property="og:url" content="/jssimporter/python-jss/zipping-non-flat-packages-for-casper/">
+<meta property="og:site_name" content="Taco Destroyer">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/jssimporter/python-jss/zipping-non-flat-packages-for-casper/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Taco Destroyer Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">Taco Destroyer</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Sample Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/theme-setup/" >Theme Setup</a></li>
+				
+				    
+				        
+				        
+				    <li><a href="http://mademistakes.com" target="_blank">Made Mistakes</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/" class="bio-photo" alt=" bio photo">
+
+
+  <h3 itemprop="name"></h3>
+  <p></p>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/jssimporter/python-jss/zipping-non-flat-packages-for-casper/" rel="bookmark" title="Zipping Non-Flat Packages For Casper">Zipping Non-Flat Packages For Casper</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Just a short little technical note. python-jss just added support for the Jamf
+distribution server as a distribution point type, which hopefully will make
+both python-jss and JSSImporter (I’m going to start calling it that instead of
+jss-autopkg-addon) useful for more people. And just to let people know the
+direction for the future, I’m hoping to add CDP support very soon.</p>
+
+<p>Anyway, AutoPkg makes flat packages, which makes sense since non-flat packages
+have been deprecated for quite awhile now. Non-flat packages still work, and
+indeed, in our shop we don’t bother to do anything special to handle them.
+However, you can’t PUT or POST a directory of files—you have to archive
+multiple files into a single file or have some kind of mechanism for multiple
+uploads. Casper Admin’s solution to this is to zip the package prior to
+uploading (if you have an incompatible DP configured). You can see that the pkg
+gains a .zip extension. On the policy side, the jamf binary knows what to do:
+it unzips the package prior to installing.</p>
+
+<p>But some vendors are still shipping non-flat packages (Silverlight is the
+example I’ve been testing with).</p>
+
+<p>Github user MitchellSBlake pointed out to me that this is often needed not only
+for JDS distribution points, but also for SMB shares to work around packages
+that may have broken symbolic links.</p>
+
+<p>After trying a number of different approaches, I’ve decided to take a couple of
+steps to continue to work with non-flat packages:
+- .ZIP/.zip as an extension is now considered a package
+- The JSSImporter will test for whether a package is non-flat, and
+  automatically zip it up into the same directory that the package came from
+  (probably as reported by pkg_path</p>
+
+<p>A couple of further implications: ALL non-flat packages will get zipped. You
+don’t have to have a JDS for this to occur. So there will probably be some more
+processor overhead, especially as larger packages are compressed. If this
+starts to be a memory issue or causes people issues, I can drop back to not
+actually compressing the packages. It also means that JSSImporter is going to
+want to re-upload any packages that you may already have on your distribution
+points, as it now is in a zip.</p>
+
+<p>Also, python-jss will just fail if you try to copy a package to a JDS; however,
+it will issue a warning that tells you why it won’t work. It’s up to you figure
+out how you want to handle this. Please take note, that if you created a
+Package object before uploading, only to discover that your package was not
+flat, you’ll probably want/need to change the name to match the new .zip
+extension.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/jssimporter/python-jss/zipping-non-flat-packages-for-casper/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/jssimporter/python-jss/zipping-non-flat-packages-for-casper/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/jssimporter/python-jss/zipping-non-flat-packages-for-casper/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Zipping Non-Flat Packages For Casper</strong> was published on <time datetime="2014-12-09T09:33:39-05:00">December 09, 2014</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/putting-the-hopper-to-work-broken-preferences-edition/" title="Putting the Hopper to Work: Broken Preferences Edition">Putting the Hopper to Work: Broken Preferences Edition</a></li>
+    
+      <li><a href="/now-i-get-it-updating-mac-firmware/" title="Now I get it... Updating Mac firmware">Now I get it... Updating Mac firmware</a></li>
+    
+      <li><a href="/how-i-roll/" title="How I Roll">How I Roll</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2015 Shea Craig. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+  
+
+
+
+</body>
+</html>
