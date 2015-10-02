@@ -8,7 +8,7 @@ title: Now I get it... Updating Mac firmware
 wordpress_id: 213
 ---
 
-![Spinal-Tap-Harry-Shearer]({{ site.url }}/images/2015-07-16-now-i-get-it-updating-mac-fimrware/Spinal-Tap-Harry-Shearer.jpg)
+![Spinal-Tap-Harry-Shearer]({{ site.url }}/images/2015-07-16-now-i-get-it-updating-mac-firmware/Spinal-Tap-Harry-Shearer.jpg)
 Perusing [Allister Banks' look into Thunderstrike
 vulnerability](https://www.afp548.com/2015/03/05/thunderstrike-need-to-know/)
 it didn't quite click for me at first what I was looking at.
