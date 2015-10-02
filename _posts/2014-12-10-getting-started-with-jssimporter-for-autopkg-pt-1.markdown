@@ -21,6 +21,7 @@ our fleet, and dropped Munki. Suddenly I had to start manually moving packages
 around and clicky-clicky-creating a ton of policies. This made me sad.
 
 [![tears](http://labs.da.org/wordpress/sheagcraig/files/2014/12/tears-300x220.jpg)](http://labs.da.org/wordpress/sheagcraig/files/2014/12/tears.jpg)
+
 Google Image search "sad" some time. You won't be disappointed.
 
 Fortunately, a brilliant guy named Allister worked through the mountain of
@@ -57,9 +58,9 @@ The first thing we need to do is provide some information to JSSImporter about
 the JSS and how to access it, and what resources it has available. If you've
 configured AutoPkg, you should be familiar with how to do this. We are going to
 add the following keys to our com.github.autopkg.plist file:
-  - JSS_URL
-  - API_USERNAME
-  - API_PASSWORD
+- JSS_URL
+- API_USERNAME
+- API_PASSWORD
 
 First, you should create an account on your JSS that will be used for API
 access, probably even just for AutoPkg. It will need "Create", "Read", and
