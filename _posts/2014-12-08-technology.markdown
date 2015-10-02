@@ -10,4 +10,4 @@ categories:
 - Foolishness
 ---
 
-[![withAllister](http://labs.da.org/wordpress/sheagcraig/files/2014/12/withAllister1.jpg)](http://labs.da.org/wordpress/sheagcraig/files/2014/12/withAllister1.jpg)
+[![withAllister]({{ site.url }}/images/2014-12-08-technology/withAllister1.jpg)

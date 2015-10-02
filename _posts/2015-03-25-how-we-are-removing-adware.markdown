@@ -32,7 +32,7 @@ So I started expanding AdwareCheck into something even better. Check out
 
 I blogged about the first one of these adware packages that we've had to deal
 with:
-[here](http://labs.da.org/wordpress/sheagcraig/2015/01/21/cleaning-up-stupid-mac-malware-projectx/).
+[here]({% post_url 2015-01-21-cleaning-up-stupid-mac-malware-projectx %}.
 Researching that, while fun, was also time consuming. Fortunately, Apple just
 released [an article](https://support.apple.com/en-us/ht203987) detailing files
 to look for and procedures to use to remove common adware programs.
