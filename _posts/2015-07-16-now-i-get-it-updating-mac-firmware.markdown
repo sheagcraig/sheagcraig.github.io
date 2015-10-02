@@ -49,7 +49,7 @@ kicking around. Within (probably the newest one) you'll find the
 FirmwareUpdate.pkg you seek.
 
 For example, the 10.10.4 one is here: 
-/reposado/html/content/downloads/02/26/031-25777/01sza4ly2cuww3yxfpsbeov51p5n3v7l87/FirmwareUpdate.pkg
+`/reposado/html/content/downloads/02/26/031-25777/01sza4ly2cuww3yxfpsbeov51p5n3v7l87/FirmwareUpdate.pkg`
     
 The package safely does nothing if a machine is already up-to-date, or if the
 package is actually too old, so there's no harm in a speculative or

@@ -8,5 +8,8 @@ title: Shout out!
 wordpress_id: 162
 ---
 
-[![6627494917_c093c2f68a](http://labs.da.org/wordpress/sheagcraig/files/2015/03/6627494917_c093c2f68a.jpg)](http://labs.da.org/wordpress/sheagcraig/files/2015/03/6627494917_c093c2f68a.jpg)
-Check out: [using-luggage-outset-and-yo-for-awesome-user-notifications](https://onemoreadmin.wordpress.com/2015/03/26/using-luggage-outset-and-yo-for-awesome-user-notifications/) for a sweet usage of yo, my recent Swift user notification app.
+![6627494917_c093c2f68a]({{ site.url }}/images/2015-03-30-shout-out/6627494917_c093c2f68a.jpg)
+
+Check out:
+[using-luggage-outset-and-yo-for-awesome-user-notifications](https://onemoreadmin.wordpress.com/2015/03/26/using-luggage-outset-and-yo-for-awesome-user-notifications/)
+for a sweet usage of yo, my recent Swift user notification app.
