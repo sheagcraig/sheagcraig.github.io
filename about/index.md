@@ -8,6 +8,10 @@ image:
   feature: leatherface-banner.jpg
 ---
 
+The chainsaw is no delicate tool, nay! Finesse, despite the efforts of County Fair chainsaw sculptors notwithstanding, is not its forte.
+
+Rather, the chainsaw is an unstoppable force for the violent separation of limbs from bodies. By design, of trees, but at times, of humans, or whatever comes too close to the circulating necklace of death.
+
 I am an IT Systems Engineer for SAS, managing their Mac systems.
 
 I have written some useful things.
