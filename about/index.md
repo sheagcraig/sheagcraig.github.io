@@ -7,14 +7,22 @@ comments: false
 image:
   feature: leatherface-banner.jpg
 ---
+> You start a conversation you can't even finish it.
+> You're talking a lot, but you're not saying anything.
+> When I have nothing to say, my lips are sealed.
+> Say something once, why say it again?
 
 The chainsaw is no delicate tool, nay! Finesse, despite the efforts of County Fair chainsaw sculptors notwithstanding, is not its forte.
 
-Rather, the chainsaw is an unstoppable force for the violent separation of limbs from bodies. By design, of trees, but at times, of humans, or whatever comes too close to the circulating necklace of death.
+Rather, the chainsaw is an unstoppable force for the violent separation of limbs from bodies. By design, bodies of the arboreal type, but at times, of humans, or anything else that comes too close to the circulating necklace of death.
+
+The chainsaw is also a tool of metaphysics. Here, my pyscho-killer alter-egos wield it to expose what truths can be grasped at through the veils of misinformation and sloth.
 
 I am an IT Systems Engineer for SAS, managing their Mac systems.
 
-I have written some useful things.
+Nothing I say here has any bearing on the viewpoints of that fine business, nor any other.
+
+I have written some useful things:
 
 ## Casper Stuff
 - python-jss (Casper REST API wrapper for python)
