@@ -99,19 +99,20 @@ Next I dug into the LaunchServices
 To eliminate duti from the mix, I spun up a Python interpretor and did the
 following:
 
-```
+{% highlight Python %}
 >>> import LaunchServices
 >>> LaunchServices.LSSetDefaultHandlerForURLScheme("mailto", "com.apple.mail")
 0
 >>> LaunchServices.LSCopyDefaultHandlerForURLScheme("mailto")
 "com.apple.mail"
-```
+{% endhighlight %}
+
 ...and I was thinking to myself, "fine, I'll just do it with python. And then
 to be safe I repeated the last command...
-```
+{% highlight Python %}
 >>> LaunchServices.LSCopyDefaultHandlerForURLScheme("mailto")
 "com.microsoft.outlook"
-```
+{% endhighlight %}
 
 It had reset on me while I was prematurely congratulating myself for a job
 well-done.
@@ -130,7 +131,7 @@ function duti and my python were using.
 
 ### setDefaultEmailHandler
 
-```
+{% highlight Objective-C %}
 void -[DefaultApplicationPopUpButton _setDefaultEmailHandler:](void * self, void * _cmd, void * arg2) {
     rdx = arg2;
     r14 = self;
@@ -152,7 +153,7 @@ void -[DefaultApplicationPopUpButton _setDefaultEmailHandler:](void * self, void
     [rdi release];
     return;
 }
-```
+{% endhighlight %}
 
 After a lot of fiddling around, I learned a few more things:
 - Only the "mailto" handler seems to be an issue. The vcf and ics stuff worked
