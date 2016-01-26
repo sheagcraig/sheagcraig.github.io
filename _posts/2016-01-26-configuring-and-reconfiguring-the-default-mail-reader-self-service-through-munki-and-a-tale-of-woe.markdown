@@ -123,7 +123,8 @@ not only could I not set the default mail handler back to Mail in any way (duti
 or the GUI), but also that I could recreate this problem without ever using
 duti, or the python/PyObjC above. I was able to recreate it with _just_ the
 Apple Mail preferences. Sure enough, with a little bit of Googling, I found a
-thread where people were complaining about this very problem.
+[thread](https://discussions.apple.com/thread/7261031?start=0&tstart=0) where
+people were complaining about this very problem.
 
 Just to confirm, I threw Apple Mail into Hopper and could verify that it wasn't
 using any super-secret private methods or anything; it was using the exact same
@@ -132,7 +133,7 @@ function duti and my python were using.
 ### setDefaultEmailHandler
 
 {% highlight Objective-C %}
-void -[DefaultApplicationPopUpButton _setDefaultEmailHandler:](void * self, void * _cmd, void * arg2) {
+void -[DefaultApplicationPopUpButton _setDefaultEmailHandler:]](void * self, void * _cmd, void * arg2) {
     rdx = arg2;
     r14 = self;
     r12 = _objc_msgSend;
@@ -205,6 +206,12 @@ the pieces.
 {% gist sheagcraig/16e9d6a01406de06c524 set_outlook_default_handler.py %}
 {% gist sheagcraig/16e9d6a01406de06c524 set_outlook_default_handler.pkginfo %}
 
+Both tasks use outset to run the script. The default handler settings
+only work if they are run as the user to which the setting should apply. The
+initial configuration to Outlook is done with a login-once script, which runs
+the script only once per user, when they log in. The reset script uses outset's
+new on demand execution type to run immediately as the current console user.
+
 Setting the mail handler back after you've set it the first time is a little
 more involved, mostly because we don't want to just kill loginwindow like a
 savage. I had timed Alert class already lying around from [this
@@ -231,3 +238,9 @@ for the complete set of pieces.
 {% gist sheagcraig/4fa2a11b7f1738e11c79 set_apple_mail_default_handler.py %}
 {% gist sheagcraig/4fa2a11b7f1738e11c79 set_apple_mail_default_handler.pkginfo %}
 {% gist sheagcraig/4fa2a11b7f1738e11c79 postinstall %}
+
+Hopefully this problem will go away _and_ very few users will even need it in
+the first place. However, it was a good opportunity for me to put into place
+these pieces to serve as an example or template for how to solve future issues,
+including prompting users, running scripts in the console user's context, and
+making use of Munki and outset's on demand features.
