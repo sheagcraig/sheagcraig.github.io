@@ -98,6 +98,7 @@ Next I dug into the LaunchServices
 [documentation](https://developer.apple.com/library/mac/documentation/Carbon/Reference/LaunchServicesReference/#//apple_ref/c/func/LSSetDefaultHandlerForURLScheme).
 To eliminate duti from the mix, I spun up a Python interpretor and did the
 following:
+
 ```
 >>> import LaunchServices
 >>> LaunchServices.LSSetDefaultHandlerForURLScheme("mailto", "com.apple.mail")
@@ -111,6 +112,7 @@ to be safe I repeated the last command...
 >>> LaunchServices.LSCopyDefaultHandlerForURLScheme("mailto")
 "com.microsoft.outlook"
 ```
+
 It had reset on me while I was prematurely congratulating myself for a job
 well-done.
 
@@ -127,6 +129,7 @@ using any super-secret private methods or anything; it was using the exact same
 function duti and my python were using.
 
 ### setDefaultEmailHandler
+
 ```
 void -[DefaultApplicationPopUpButton _setDefaultEmailHandler:](void * self, void * _cmd, void * arg2) {
     rdx = arg2;
