@@ -24,6 +24,10 @@ Nothing I say here has any bearing on the viewpoints of that fine business, nor 
 
 I have written some useful things:
 
+## Munki Stuff
+- Spruce (for Munki)
+- Phaseshift (Automate phase-testing)
+
 ## Casper Stuff
 - python-jss (Casper REST API wrapper for python)
 - JSSImporter (The magic plugin that lets you use AutoPkg with Casper)
@@ -40,5 +44,5 @@ I have written some useful things:
 ## Some Things I Like
 - Tacos
 - Coffee
-- I shred dirt on my S-Works Stumpjumper FSR, nicknamed "Asfaloth".
+- I shred dirt on my Stumpjumper FSR, named "Pulled Pork".
 - I coach CrossFit at CrossFit Local in Chapel Hill, NC. Just ask about "Barbell Club", and our numerous signature workouts.
