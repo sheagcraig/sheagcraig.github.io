@@ -65,6 +65,9 @@ munkiimport preferences if they are in the usual place. Mount the share to your
 repo, and step through the configuration prompts. When mounted, my repo is just
 "/Volumes/munki_repo".
 
+You may want to put spruce in /usr/local for use later. You can alias or
+link the spruce executable so it's available from anywhere.
+
 ### Getting Dirty
 Once you've configured Spruce, it will continue with the `name` command.
 
