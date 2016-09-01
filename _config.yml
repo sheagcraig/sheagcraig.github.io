@@ -9,7 +9,7 @@
 locale                   : "en"
 title                    : "Taco Destroyer"
 title_separator          : "-"
-name                     : "Your Name"
+name                     : "Shea Craig"
 description              : "An amazing website."
 url                      : "https://sheagcraig.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -80,7 +80,7 @@ author:
   name             : "Shea Craig"
   avatar           : "leatherface.png"
   bio              : "High Cleric of Vim, Destroyer of Burritos, Scourge of Coffee Beans."
-  location         : ""
+  location         : "Dirty South"
   email            :
   uri              :
   bitbucket        :
