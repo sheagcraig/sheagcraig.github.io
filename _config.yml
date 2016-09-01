@@ -14,7 +14,7 @@ description              : "An amazing website."
 url                      : "https://sheagcraig.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "sheagcraig/sheagcraig.github.io"
-teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+teaser                   : "hopper-banner.jpg"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -227,3 +227,17 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true

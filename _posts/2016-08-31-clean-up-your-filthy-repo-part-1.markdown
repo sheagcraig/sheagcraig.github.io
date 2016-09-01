@@ -2,7 +2,7 @@
 title: "Clean up Your Filthy Repo: Part 1 (Names)"
 date: 2016-08-30T12:05:25-05:00
 comments: true
-layout: post
+layout: single
 ---
 ![On my honor, I promise to do my best!]({{ site.url }}/images/2016-08-31-clean-up-your-filthy-repo/boyscout.jpg)
 

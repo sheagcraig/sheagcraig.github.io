@@ -2,7 +2,7 @@
 author: shea_craig
 comments: true
 date: 2014-12-10 19:28:49+00:00
-layout: post
+layout: single
 slug: getting-started-with-jssimporter-for-autopkg-pt-1
 title: 'Getting started with JSSImporter for AutoPkg: Pt 1'
 wordpress_id: 22

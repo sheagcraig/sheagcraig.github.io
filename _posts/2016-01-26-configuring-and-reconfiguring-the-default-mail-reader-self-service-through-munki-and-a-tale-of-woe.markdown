@@ -2,7 +2,7 @@
 title: Configuring and Reconfiguring the Default Mail Reader. Self Service through Munki, and a Tale of Woe
 date: 2016-01-26T12:05:25-05:00
 comments: true
-layout: post
+layout: single
 ---
 ![Pabst Blue Ribbon!]({{ site.url }}/images/apple_mail_reader/pbr.jpg)
 

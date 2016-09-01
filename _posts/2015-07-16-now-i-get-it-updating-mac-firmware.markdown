@@ -2,7 +2,7 @@
 author: shea_craig
 comments: true
 date: 2015-07-16 19:38:24+00:00
-layout: post
+layout: single
 slug: now-i-get-it-updating-mac-firmware
 title: Now I get it... Updating Mac firmware
 wordpress_id: 213

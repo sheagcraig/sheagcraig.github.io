@@ -2,7 +2,7 @@
 author: shea_craig
 comments: true
 date: 2014-12-08 18:54:58+00:00
-layout: post
+layout: single
 slug: technology
 title: Technology!
 wordpress_id: 13

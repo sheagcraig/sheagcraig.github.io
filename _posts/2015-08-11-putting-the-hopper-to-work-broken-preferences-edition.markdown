@@ -2,7 +2,7 @@
 author: shea_craig
 comments: true
 date: 2015-08-11 19:24:05+00:00
-layout: post
+layout: single
 slug: putting-the-hopper-to-work-broken-preferences-edition
 title: 'Putting the Hopper to Work: Broken Preferences Edition'
 wordpress_id: 223

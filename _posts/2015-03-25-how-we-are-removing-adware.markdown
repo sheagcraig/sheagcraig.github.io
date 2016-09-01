@@ -2,7 +2,7 @@
 author: shea_craig
 comments: true
 date: 2015-03-25 16:23:21+00:00
-layout: post
+layout: single
 slug: how-we-are-removing-adware
 title: How We Are Removing Adware
 wordpress_id: 122

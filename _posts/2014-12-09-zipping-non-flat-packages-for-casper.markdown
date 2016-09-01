@@ -2,7 +2,7 @@
 author: shea_craig
 comments: true
 date: 2014-12-09 14:33:39+00:00
-layout: post
+layout: single
 slug: zipping-non-flat-packages-for-casper
 title: Zipping Non-Flat Packages For Casper
 wordpress_id: 18

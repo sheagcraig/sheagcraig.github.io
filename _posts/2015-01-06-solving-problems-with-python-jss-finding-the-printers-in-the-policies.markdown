@@ -2,7 +2,7 @@
 author: shea_craig
 comments: true
 date: 2015-01-06 20:47:33+00:00
-layout: post
+layout: single
 slug: solving-problems-with-python-jss-finding-the-printers-in-the-policies
 title: 'Solving Problems With python-jss: Finding the Printers in the Policies'
 wordpress_id: 46

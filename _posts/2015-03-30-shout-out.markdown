@@ -2,7 +2,7 @@
 author: shea_craig
 comments: true
 date: 2015-03-30 12:24:35+00:00
-layout: post
+layout: single
 slug: shout-out
 title: Shout out!
 wordpress_id: 162

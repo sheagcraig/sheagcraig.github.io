@@ -2,7 +2,7 @@
 author: shea_craig
 comments: true
 date: 2015-04-01 18:54:02+00:00
-layout: post
+layout: single
 slug: expanding-text-replacement-in-jssimporter
 title: Expanding Text Replacement in JSSImporter
 wordpress_id: 190
