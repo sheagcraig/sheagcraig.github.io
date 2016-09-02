@@ -2,6 +2,3 @@
 main:
 - title: About
   url: /about/
-
-- title: All Posts
-  url: /year-archive/
