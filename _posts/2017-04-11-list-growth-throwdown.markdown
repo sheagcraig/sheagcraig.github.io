@@ -17,7 +17,7 @@ some_list += another_list
 or
 
 {% highlight Python %}
-some_list(another_list)
+some_list.extend(another_list)
 {% endhighlight %}
 
 So I cooked this up:
