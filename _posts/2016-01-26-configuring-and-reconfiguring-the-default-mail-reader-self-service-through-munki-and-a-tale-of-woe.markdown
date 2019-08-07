@@ -13,19 +13,20 @@ the confusing configuration of a default mail reader on OS X. Specifically,
 when users click a `mailto://` link on a webpage, rather than opening Outlook
 as they might expect, OS X opens the default mail handler, Apple Mail. The
 problem becomes compounded when Apple Mail refuses to let you do anything until
-you have successfully configured a mail account through it's new account
-wizard. Enough users have a hard time figuring out how to scroll text windows
-without grabbing the side-sliders that expecting them to go rooting around in
-the preferences is a tall order, especially when we can set it for them.
+you have successfully configured a mail account through its new account
+wizard (Update: This, at least, is no longer an issue). Enough users have a
+hard time figuring out how to scroll text windows without grabbing the
+side-sliders that expecting them to go rooting around in the preferences is a
+tall order, especially when we can set it for them.
 
 This post will cover how to set the default handlers for your client machines,
-and importantly, also how to then set them back again, which may look simple
+and importantly, also how to set them back again, which may look simple
 after you have solved the first problem, but be wary! Looks can be deceiving!
 
 ### TL;DR
 You can grab all of the bits and pieces from these two gists:
 [Set Microsoft Outlook as Default Handler for mailto, vcf, and ics](https://gist.github.com/sheagcraig/16e9d6a01406de06c524).
-[Munki/Outset/PyObjC Self Service Set Apple Mail as Default Handler for mailto]().
+[Munki/Outset/PyObjC Self Service Set Apple Mail as Default Handler for mailto](https://gist.github.com/sheagcraig/4fa2a11b7f1738e11c79).
 
 ### Heavy Support Load: The Problem
 Unlike some OS's, where a system preference pane allows you to configure all of
@@ -67,6 +68,7 @@ this solution worked great, and I moved on to the next thing. Client machines
 built and had the correct app configured for the communications tasks intended.
 
 ### Grumbling Out of Earshot: The Next Problem
+(UPDATE: The bug described below has been fixed by Apple)
 Then I started to hear from the die-hard Apple users about how they were both
 disgusted at my complicity in Microsofting their Apple, and more importantly,
 their inability to undo what I had done and use Apple Mail as their default
@@ -239,8 +241,8 @@ for the complete set of pieces.
 {% gist sheagcraig/4fa2a11b7f1738e11c79 set_apple_mail_default_handler.pkginfo %}
 {% gist sheagcraig/4fa2a11b7f1738e11c79 postinstall %}
 
-Hopefully this problem will go away _and_ very few users will even need it in
-the first place. However, it was a good opportunity for me to put into place
-these pieces to serve as an example or template for how to solve future issues,
-including prompting users, running scripts in the console user's context, and
-making use of Munki and outset's on demand features.
+Hopefully this problem will go away (UPDATE: It did) _and_ very few users will
+even need it in the first place. However, it was a good opportunity for me to
+put into place these pieces to serve as an example or template for how to solve
+future issues, including prompting users, running scripts in the console user's
+context, and making use of Munki and outset's on demand features.
