@@ -14,10 +14,9 @@ when users click a `mailto://` link on a webpage, rather than opening Outlook
 as they might expect, OS X opens the default mail handler, Apple Mail. The
 problem becomes compounded when Apple Mail refuses to let you do anything until
 you have successfully configured a mail account through its new account
-wizard (Update: This, at least, is no longer an issue). Enough users have a
-hard time figuring out how to scroll text windows without grabbing the
-side-sliders that expecting them to go rooting around in the preferences is a
-tall order, especially when we can set it for them.
+wizard. Enough users have a hard time figuring out how to scroll text windows
+without grabbing the side-sliders that expecting them to go rooting around in
+the preferences is a tall order, especially when we can set it for them.
 
 This post will cover how to set the default handlers for your client machines,
 and importantly, also how to set them back again, which may look simple
